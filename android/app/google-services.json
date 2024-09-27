@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642813048864",
+    "project_id": "benlekal",
+    "storage_bucket": "benlekal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642813048864:android:b2144420debf386e1fa445",
+        "android_client_info": {
+          "package_name": "com.example.psychology_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ3WBHqY_v2fIafrZJnF7Keo_JFPf3J2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
