@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:psychology_app/firebase_options.dart';
-import 'package:psychology_app/pages/loginOptionsPage.dart';
-import 'package:psychology_app/pages/splashPage.dart';
+import 'package:psychology_app/pages/login_options_page.dart';
+import 'package:psychology_app/pages/splash_page.dart';
 import 'package:psychology_app/routes.dart';
 
 void main() async {

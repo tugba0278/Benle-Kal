@@ -13,15 +13,16 @@ class _LoginOptionsPageState extends State<LoginOptionsPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-          preferredSize:
-              Size.fromHeight(MediaQuery.of(context).size.height * 0.3),
-          child: AppBar(
-            backgroundColor: Colors.amber,
-            title: Text(
-              "widget.title",
-              textAlign: TextAlign.center,
-            ),
-          )),
+        preferredSize:
+            Size.fromHeight(MediaQuery.of(context).size.height * 0.3),
+        child: AppBar(
+          backgroundColor: Colors.amber,
+          title: Text(
+            "widget.title",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -38,6 +38,7 @@ dependencies:
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
   cloud_firestore: ^5.4.3
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +64,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/
+    - lib/assets/images/
+    - lib/assets/vector/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -78,16 +80,18 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: Inter
       fonts:
-        - asset: fonts/Schyler-Regular.ttf
-        - asset: fonts/Schyler-Italic.ttf
+        - asset: lib/assets/fonts/Inter_18pt-Regular.ttf
+          weight: 400
+        - asset: lib/assets/fonts/Inter_18pt-Medium.ttf
           style: italic
-    - family: Trajan Pro
+          weight: 500
+    - family: Island Moments
       fonts:
-        - asset: fonts/TrajanPro.ttf
-        - asset: fonts/TrajanPro_Bold.ttf
+        - asset: lib/assets/fonts/IslandMoments-Regular.ttf
           weight: 700
+    
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
