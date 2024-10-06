@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/string-values/splash_string.dart';
 
