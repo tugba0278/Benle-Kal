@@ -4,6 +4,8 @@ import 'package:psychology_app/firebase_options.dart';
 import 'package:psychology_app/pages/login_options_page.dart';
 import 'package:psychology_app/pages/login_psychologist_page.dart';
 import 'package:psychology_app/pages/login_student_page.dart';
+import 'package:psychology_app/pages/register_psychologist_page.dart';
+import 'package:psychology_app/pages/register_student_page.dart';
 import 'package:psychology_app/pages/splash_page.dart';
 import 'package:psychology_app/routes.dart';
 
@@ -26,7 +28,10 @@ class MyApp extends StatelessWidget {
         splashPageRoute: (context) => const SplashPage(),
         loginOptionsPageRoute: (context) => const LoginOptionsPage(),
         loginStudentPageRoute: (context) => const LoginStudentPage(),
+        registerStudentPageRoute: (context) => const RegisterStudentPage(),
         loginPsychologistPageRoute: (context) => const LoginPsychologistPage(),
+        registerPsychologistPageRoute: (context) =>
+            const RegisterPsychologistPage(),
       },
     );
   }
