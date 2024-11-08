@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:psychology_app/classes/container1.dart';
+import 'package:psychology_app/classes/container2.dart';
+import 'package:psychology_app/classes/login_logo_container.dart';
+import 'package:psychology_app/styles.dart';
 
 class LoginStudentPage extends StatefulWidget {
   const LoginStudentPage({super.key});
@@ -8,18 +12,88 @@ class LoginStudentPage extends StatefulWidget {
 }
 
 class _LoginStudentPageState extends State<LoginStudentPage> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController =
+      TextEditingController(); //e-mailin girileceği text metnin kontrolünü sağlar.
+  final TextEditingController _passwordController =
+      TextEditingController(); //şifrenin girileceği text metnin kontrolünü sağlar.
+
+  @override
+  void dispose() {
+    _emailController.dispose(); // email objesi bellekten kaldırılır
+    _passwordController.dispose(); //şifre objesi bellekten kaldırılır
+    super.dispose(); //widget'ın tamamı bellekten kaldırılır
+  }
+
   @override
   Widget build(BuildContext context) {
+    Container1 container1 = Container1();
+    Container2 container2 = Container2();
+    LogoContainer loginLogoContainer =
+        LogoContainer(imagePath: 'lib/assets/images/student-logo.png');
+
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.amber,
-        title: Text(
-          "widget.title",
-          textAlign: TextAlign.center,
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                //blue container and back vector
+                Stack(
+                  children: [
+                    //blue container
+                    container1.buildContainer(context),
+                    //back vector
+                    Padding(
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.08,
+                            left: 20),
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: backVectorStyle)),
+                  ],
+                ),
+                //white container
+                container2.buildContainer(context),
+              ],
+            ),
+            //logo container
+            loginLogoContainer.buildContainer(context),
+
+            //input text ve button
+            Padding(
+                padding: EdgeInsets.fromLTRB(
+                    60, MediaQuery.of(context).size.height * 0.4, 60, 0),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      TextFormField(
+                          decoration: const InputDecoration(
+                              labelText: '    Email',
+                              labelStyle: formTextStyle,
+                              border: formBorderStyle,
+                              focusedBorder: formFocusBorderStyle)),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                            labelText: '     Şifre',
+                            labelStyle: formTextStyle,
+                            border: formBorderStyle,
+                            focusedBorder: formFocusBorderStyle),
+                      )
+                    ],
+                  ),
+                ))
+          ],
         ),
       ),
     );
