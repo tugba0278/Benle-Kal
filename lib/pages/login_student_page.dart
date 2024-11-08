@@ -65,34 +65,60 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
             loginLogoContainer.buildContainer(context),
 
             //input text ve button
-            Padding(
-                padding: EdgeInsets.fromLTRB(
-                    60, MediaQuery.of(context).size.height * 0.4, 60, 0),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      TextFormField(
-                          decoration: const InputDecoration(
-                              labelText: '    Email',
-                              labelStyle: formTextStyle,
-                              border: formBorderStyle,
-                              focusedBorder: formFocusBorderStyle)),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      TextFormField(
-                        decoration: const InputDecoration(
-                            labelText: '     Şifre',
-                            labelStyle: formTextStyle,
-                            border: formBorderStyle,
-                            focusedBorder: formFocusBorderStyle),
-                      )
-                    ],
-                  ),
-                ))
+            Center(
+              child: Padding(
+                  padding: EdgeInsets.fromLTRB(
+                      60, MediaQuery.of(context).size.height * 0.4, 60, 0),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 265,
+                          height: 50,
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                labelText: '    Email',
+                                labelStyle: formTextStyle,
+                                border: formBorderStyle,
+                                focusedBorder: formFocusBorderStyle),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        SizedBox(
+                          width: 265,
+                          height: 50,
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                labelText: '     Şifre',
+                                labelStyle: formTextStyle,
+                                border: formBorderStyle,
+                                focusedBorder: formFocusBorderStyle),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        SizedBox(
+                          width: 200,
+                          height: 40,
+                          child: OutlinedButton(
+                              onPressed: () {},
+                              style: logRegButtonStyle,
+                              child: const Text(
+                                'Oturum Aç',
+                                style: logRegTextStyle,
+                              )),
+                        )
+                      ],
+                    ),
+                  )),
+            )
           ],
         ),
       ),

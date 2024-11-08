@@ -41,7 +41,24 @@ final studentImageStyle = Image.asset(
   height: 40,
 );
 
-const formTextStyle = TextStyle(color: Color(0xFFC96868));
+var logRegButtonStyle = OutlinedButton.styleFrom(
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(30),
+  ),
+  backgroundColor: Colors.black,
+);
+
+const logRegTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontFamily: "Inter",
+    fontWeight: FontWeight.w400);
+
+const formTextStyle = TextStyle(
+    color: Color(0xFFC96868),
+    fontSize: 18,
+    fontFamily: "Inter",
+    fontWeight: FontWeight.w400);
 
 const formBorderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(30)),
