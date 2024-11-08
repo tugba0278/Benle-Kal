@@ -54,6 +54,24 @@ const logRegTextStyle = TextStyle(
     fontFamily: "Inter",
     fontWeight: FontWeight.w400);
 
+var textButtonStyle = TextButton.styleFrom(
+    textStyle: const TextStyle(
+      color: Colors.black,
+      fontSize: 15,
+      fontFamily: "Inter",
+      fontWeight: FontWeight.w400,
+    ),
+    foregroundColor: Colors.black);
+
+var textButtonStyle2 = TextButton.styleFrom(
+    textStyle: const TextStyle(
+      //color: Color(0xFFC96868),
+      fontSize: 15,
+      fontFamily: "Inter",
+      fontWeight: FontWeight.w400,
+    ),
+    foregroundColor: const Color.fromRGBO(201, 104, 104, 52));
+
 const formTextStyle = TextStyle(
     color: Color(0xFFC96868),
     fontSize: 18,
@@ -62,11 +80,12 @@ const formTextStyle = TextStyle(
 
 const formBorderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(30)),
-    borderSide: BorderSide(color: Color(0xFFFF9B9B)));
+    borderSide: BorderSide(color: Color(0XFFFF9B9B), width: 1));
 
 const formFocusBorderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(30)),
-    borderSide: BorderSide(color: Color(0xFFC96868)));
+    borderSide:
+        BorderSide(color: Color.fromARGB(255, 255, 183, 183), width: 1));
 
 final backVectorStyle = Image.asset(
   'lib/assets/vector/back.png',

@@ -4,24 +4,26 @@ import 'package:psychology_app/classes/container2.dart';
 import 'package:psychology_app/classes/login_logo_container.dart';
 import 'package:psychology_app/styles.dart';
 
-class LoginStudentPage extends StatefulWidget {
-  const LoginStudentPage({super.key});
+class RegisterStudentPage extends StatefulWidget {
+  const RegisterStudentPage({super.key});
 
   @override
-  State<LoginStudentPage> createState() => _LoginStudentPageState();
+  State<RegisterStudentPage> createState() => _RegisterStudentPageState();
 }
 
-class _LoginStudentPageState extends State<LoginStudentPage> {
+class _RegisterStudentPageState extends State<RegisterStudentPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController =
       TextEditingController(); //e-mailin girileceği text metnin kontrolünü sağlar.
   final TextEditingController _passwordController =
       TextEditingController(); //şifrenin girileceği text metnin kontrolünü sağlar.
+  final TextEditingController _repPasswordController = TextEditingController();
 
   @override
   void dispose() {
     _emailController.dispose(); // email objesi bellekten kaldırılır
     _passwordController.dispose(); //şifre objesi bellekten kaldırılır
+    _repPasswordController.dispose();
     super.dispose(); //widget'ın tamamı bellekten kaldırılır
   }
 
@@ -29,7 +31,7 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
   Widget build(BuildContext context) {
     Container1 container1 = Container1();
     Container2 container2 = Container2();
-    LogoContainer loginLogoContainer =
+    LogoContainer registerLogoContainer =
         LogoContainer(imagePath: 'lib/assets/images/student-logo.png');
 
     return Scaffold(
@@ -62,7 +64,7 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
               ],
             ),
             //logo container
-            loginLogoContainer.buildContainer(context),
+            registerLogoContainer.buildContainer(context),
 
             //input text ve button
             Center(
@@ -101,13 +103,19 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                                 focusedBorder: formFocusBorderStyle),
                           ),
                         ),
-                        Padding(
-                          //alignment: Alignment.bottomRight,
-                          padding: const EdgeInsets.only(left: 130),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: textButtonStyle,
-                            child: const Text('Şifremi Unuttum'),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        SizedBox(
+                          width: 265,
+                          height: 50,
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                labelText: '    Şifre Tekrarı',
+                                labelStyle: formTextStyle,
+                                enabledBorder: formBorderStyle,
+                                focusedBorder: formFocusBorderStyle),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                         const SizedBox(
@@ -120,7 +128,7 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                               onPressed: () {},
                               style: logRegButtonStyle,
                               child: const Text(
-                                'Oturum Aç',
+                                'Kaydol',
                                 style: logRegTextStyle,
                               )),
                         ),
