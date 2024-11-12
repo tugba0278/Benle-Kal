@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
 class Container2 {
@@ -16,22 +15,7 @@ class Container2 {
       alignment: Alignment.bottomCenter, // Resmi en alt ve ortasına hizala
       padding: const EdgeInsets.only(bottom: 20.0), // Alttan 20 piksel boşluk
       //curve image
-      child: Padding(
-        padding:
-            EdgeInsets.only(left: (MediaQuery.of(context).size.width / 2) - 30),
-        child: Row(
-          children: [
-            curvedArrowStyle,
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, registerStudentPageRoute);
-              },
-              style: textButtonStyle2,
-              child: const Text('Hesap Aç'),
-            ),
-          ],
-        ),
-      ),
+      child: curvedArrowStyle,
     );
   }
 }

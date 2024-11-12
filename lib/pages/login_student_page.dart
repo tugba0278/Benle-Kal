@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:psychology_app/classes/container1.dart';
 import 'package:psychology_app/classes/container2.dart';
 import 'package:psychology_app/classes/login_logo_container.dart';
+import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
 class LoginStudentPage extends StatefulWidget {
@@ -58,7 +59,23 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                   ],
                 ),
                 //white container
-                container2.buildContainer(context),
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    container2.buildContainer(context),
+                    Positioned(
+                        bottom: 20,
+                        left: (MediaQuery.of(context).size.width / 2) + 30,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, registerStudentPageRoute);
+                          },
+                          style: textButtonStyle2,
+                          child: const Text('Hesap Aç'),
+                        ))
+                  ],
+                ),
               ],
             ),
             //logo container
