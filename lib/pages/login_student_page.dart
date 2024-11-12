@@ -65,7 +65,7 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                     container2.buildContainer(context),
                     Positioned(
                         bottom: 20,
-                        left: (MediaQuery.of(context).size.width / 2) + 30,
+                        left: (MediaQuery.of(context).size.width / 2) + 40,
                         child: TextButton(
                           onPressed: () {
                             Navigator.pushNamed(

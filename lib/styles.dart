@@ -92,3 +92,9 @@ final backVectorStyle = Image.asset(
   height: 35,
   width: 35,
 );
+
+final psychologLogoStyle = Image.asset(
+  'lib/assets/images/psycholog-logo.png',
+  height: 85,
+  width: 85,
+);
