@@ -17,13 +17,14 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
       TextEditingController(); //e-mailin girileceği text metnin kontrolünü sağlar.
   final TextEditingController _passwordController =
       TextEditingController(); //şifrenin girileceği text metnin kontrolünü sağlar.
-  final TextEditingController _repPasswordController = TextEditingController();
+  final TextEditingController _repPasswordController =
+      TextEditingController(); //şifre tekrarı text metnin kontrolünü sağlar.
 
   @override
   void dispose() {
     _emailController.dispose(); // email objesi bellekten kaldırılır
     _passwordController.dispose(); //şifre objesi bellekten kaldırılır
-    _repPasswordController.dispose();
+    _repPasswordController.dispose(); //şifre tekrar objesi bellekten kaldırılır
     super.dispose(); //widget'ın tamamı bellekten kaldırılır
   }
 
@@ -101,6 +102,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                         const SizedBox(
