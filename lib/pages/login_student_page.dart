@@ -101,6 +101,7 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                             height: 50,
                             child: TextFormField(
                               controller: _emailController,
+                              keyboardType: TextInputType.emailAddress,
                               decoration: const InputDecoration(
                                   labelText: '   Email',
                                   labelStyle: formTextStyle,
@@ -117,6 +118,7 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                             height: 50,
                             child: TextFormField(
                               controller: _passwordController,
+                              keyboardType: TextInputType.text,
                               decoration: const InputDecoration(
                                   labelText: '   Şifre',
                                   labelStyle: formTextStyle,

@@ -115,6 +115,7 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                             height: 50,
                             child: TextFormField(
                               controller: _emailController,
+                              keyboardType: TextInputType.emailAddress,
                               decoration: const InputDecoration(
                                   labelText: '   Email',
                                   labelStyle: formTextStyle,
@@ -131,6 +132,7 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                             height: 50,
                             child: TextFormField(
                               controller: _passwordController,
+                              keyboardType: TextInputType.text,
                               decoration: const InputDecoration(
                                   labelText: '   Şifre',
                                   labelStyle: formTextStyle,
