@@ -37,123 +37,131 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                //blue container and back vector
-                Stack(
-                  children: [
-                    //blue container
-                    container1.buildContainer(context),
-                    //back vector
-                    Padding(
-                        padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.08,
-                            left: 20),
-                        child: IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: backVectorStyle)),
-                  ],
-                ),
-                //white container
-                Stack(
-                  alignment: Alignment.bottomRight,
-                  children: [
-                    container2.buildContainer(context),
-                    Positioned(
-                        bottom: 20,
-                        left: (MediaQuery.of(context).size.width / 2) + 40,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: textButtonStyle2,
-                          child: const Text('Okul maili ile kaydol'),
-                        ))
-                  ],
-                ),
-              ],
-            ),
-            //logo container
-            registerLogoContainer.buildContainer(context),
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  //blue container and back vector
+                  Stack(
+                    children: [
+                      //blue container
+                      container1.buildContainer(context),
+                      //back vector
+                      Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.08,
+                              left: 20),
+                          child: IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: backVectorStyle)),
+                    ],
+                  ),
+                  //white container
+                  Stack(
+                    alignment: Alignment.bottomRight,
+                    children: [
+                      container2.buildContainer(context),
+                      Positioned(
+                          bottom: 20,
+                          left: (MediaQuery.of(context).size.width / 2) + 40,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: textButtonStyle2,
+                            child: const Text('Okul maili ile kaydol'),
+                          ))
+                    ],
+                  ),
+                ],
+              ),
+              //logo container
+              registerLogoContainer.buildContainer(context),
 
-            //input text ve button
-            Center(
-              child: Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      60, MediaQuery.of(context).size.height * 0.4, 60, 0),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 265,
-                          height: 50,
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                                labelText: '   Email',
-                                labelStyle: formTextStyle,
-                                enabledBorder: formBorderStyle,
-                                focusedBorder: formFocusBorderStyle),
-                            textAlign: TextAlign.center,
+              //input text ve button
+              Center(
+                child: Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        60, MediaQuery.of(context).size.height * 0.4, 60, 0),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 265,
+                            height: 50,
+                            child: TextFormField(
+                              controller: _emailController,
+                              decoration: const InputDecoration(
+                                  labelText: '   Email',
+                                  labelStyle: formTextStyle,
+                                  enabledBorder: formBorderStyle,
+                                  focusedBorder: formFocusBorderStyle),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          width: 265,
-                          height: 50,
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                                labelText: '    Şifre',
-                                labelStyle: formTextStyle,
-                                enabledBorder: formBorderStyle,
-                                focusedBorder: formFocusBorderStyle),
-                            textAlign: TextAlign.center,
+                          const SizedBox(
+                            height: 30,
                           ),
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          width: 265,
-                          height: 50,
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                                labelText: '    Şifre Tekrarı',
-                                labelStyle: formTextStyle,
-                                enabledBorder: formBorderStyle,
-                                focusedBorder: formFocusBorderStyle),
-                            textAlign: TextAlign.center,
-                            obscureText: true,
-                            obscuringCharacter: '*',
+                          SizedBox(
+                            width: 265,
+                            height: 50,
+                            child: TextFormField(
+                              controller: _passwordController,
+                              decoration: const InputDecoration(
+                                  labelText: '    Şifre',
+                                  labelStyle: formTextStyle,
+                                  enabledBorder: formBorderStyle,
+                                  focusedBorder: formFocusBorderStyle),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 50,
-                        ),
-                        SizedBox(
-                          width: 200,
-                          height: 40,
-                          child: OutlinedButton(
-                              onPressed: () {},
-                              style: logRegButtonStyle,
-                              child: const Text(
-                                'Kaydol',
-                                style: logRegTextStyle,
-                              )),
-                        ),
-                      ],
-                    ),
-                  )),
-            ),
-          ],
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          SizedBox(
+                            width: 265,
+                            height: 50,
+                            child: TextFormField(
+                              controller: _repPasswordController,
+                              decoration: const InputDecoration(
+                                  labelText: '    Şifre Tekrarı',
+                                  labelStyle: formTextStyle,
+                                  enabledBorder: formBorderStyle,
+                                  focusedBorder: formFocusBorderStyle),
+                              textAlign: TextAlign.center,
+                              obscureText: true,
+                              obscuringCharacter: '*',
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                          SizedBox(
+                            width: 200,
+                            height: 40,
+                            child: OutlinedButton(
+                                onPressed: () {},
+                                style: logRegButtonStyle,
+                                child: const Text(
+                                  'Kaydol',
+                                  style: logRegTextStyle,
+                                )),
+                          ),
+                        ],
+                      ),
+                    )),
+              ),
+            ],
+          ),
         ),
       ),
     );
