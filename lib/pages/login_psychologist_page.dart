@@ -80,6 +80,7 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                 )
               ],
             ),
+            //logo
             Stack(
               children: [
                 loginLogoContainer.buildContainer(context),

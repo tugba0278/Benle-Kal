@@ -33,8 +33,8 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
   Widget build(BuildContext context) {
     Container1 container1 = Container1();
     Container2 container2 = Container2();
-    LogoContainer registerLogoContainer =
-        LogoContainer(imagePath: 'lib/assets/images/psycholog-logo.png');
+    LogoContainer registerLogoContainer = LogoContainer(
+        imagePath: 'lib/assets/images/psycholog-logo-ellipse.png');
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -67,8 +67,20 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                 container2.buildContainer(context),
               ],
             ),
-            //logo container
-            registerLogoContainer.buildContainer(context),
+            //logo
+            Stack(
+              children: [
+                registerLogoContainer.buildContainer(context),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.2),
+                    child: psychologLogoStyle,
+                  ),
+                )
+              ],
+            ),
 
             //input text ve button
             Center(
@@ -131,11 +143,11 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                           height: 40,
                           child: OutlinedButton(
                             onPressed: () {},
-                            child: Text(
+                            style: logRegButtonStyle,
+                            child: const Text(
                               'Kaydol',
                               style: logRegTextStyle,
                             ),
-                            style: logRegButtonStyle,
                           ),
                         ),
                       ],
