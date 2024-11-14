@@ -96,7 +96,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '    Email',
+                                labelText: '   Email',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
@@ -111,7 +111,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '     Şifre',
+                                labelText: '    Şifre',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
@@ -126,7 +126,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '  Şifre Tekrarı',
+                                labelText: '    Şifre Tekrarı',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),

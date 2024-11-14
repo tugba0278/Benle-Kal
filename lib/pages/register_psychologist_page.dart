@@ -98,7 +98,7 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '   Email',
+                                labelText: '    Email',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
@@ -113,7 +113,7 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '   Şifre',
+                                labelText: '    Şifre',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
