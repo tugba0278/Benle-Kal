@@ -130,6 +130,7 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
+                            textAlign: TextAlign.center,
                             obscureText: true,
                             obscuringCharacter: '*',
                           ),
