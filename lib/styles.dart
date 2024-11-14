@@ -74,7 +74,7 @@ var textButtonStyle2 = TextButton.styleFrom(
 
 const formTextStyle = TextStyle(
     color: Color(0xFFC96868),
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: "Inter",
     fontWeight: FontWeight.w400);
 

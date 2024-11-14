@@ -117,7 +117,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                             child: TextFormField(
                               controller: _passwordController,
                               decoration: const InputDecoration(
-                                  labelText: '    Şifre',
+                                  labelText: '   Şifre',
                                   labelStyle: formTextStyle,
                                   enabledBorder: formBorderStyle,
                                   focusedBorder: formFocusBorderStyle),
@@ -133,7 +133,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                             child: TextFormField(
                               controller: _repPasswordController,
                               decoration: const InputDecoration(
-                                  labelText: '    Şifre Tekrarı',
+                                  labelText: '   Şifre Tekrarı',
                                   labelStyle: formTextStyle,
                                   enabledBorder: formBorderStyle,
                                   focusedBorder: formFocusBorderStyle),
