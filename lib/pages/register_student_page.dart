@@ -61,7 +61,20 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                   ],
                 ),
                 //white container
-                container2.buildContainer(context),
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    container2.buildContainer(context),
+                    Positioned(
+                        bottom: 20,
+                        left: (MediaQuery.of(context).size.width / 2) + 40,
+                        child: TextButton(
+                          onPressed: () {},
+                          style: textButtonStyle2,
+                          child: const Text('Okul maili ile kaydol'),
+                        ))
+                  ],
+                ),
               ],
             ),
             //logo container
