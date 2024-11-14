@@ -111,7 +111,7 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '     Email',
+                                labelText: '   Email',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
@@ -126,10 +126,12 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '     Şifre',
+                                labelText: '   Şifre',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
+                            obscureText: true,
+                            obscuringCharacter: '*',
                           ),
                         ),
                         Padding(

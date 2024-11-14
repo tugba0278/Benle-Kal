@@ -113,11 +113,13 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                           height: 50,
                           child: TextFormField(
                             decoration: const InputDecoration(
-                                labelText: '    Şifre Tekrarı',
+                                labelText: '  Şifre Tekrarı',
                                 labelStyle: formTextStyle,
                                 enabledBorder: formBorderStyle,
                                 focusedBorder: formFocusBorderStyle),
                             textAlign: TextAlign.center,
+                            obscureText: true,
+                            obscuringCharacter: '*',
                           ),
                         ),
                         const SizedBox(
