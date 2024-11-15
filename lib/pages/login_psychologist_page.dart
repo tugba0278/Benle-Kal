@@ -114,7 +114,8 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                             width: 265,
                             height: 50,
                             child: TextFormField(
-                              controller: _emailController,
+                              controller:
+                                  _emailController, //Kullanıcının metin alanına girdiği veriyi almak için kullanılır.
                               keyboardType: TextInputType.emailAddress,
                               decoration: const InputDecoration(
                                   labelText: '   Email',
@@ -131,7 +132,8 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                             width: 265,
                             height: 50,
                             child: TextFormField(
-                              controller: _passwordController,
+                              controller:
+                                  _passwordController, //Kullanıcının metin alanına girdiği veriyi almak için kullanılır.
                               keyboardType: TextInputType.text,
                               decoration: const InputDecoration(
                                   labelText: '   Şifre',

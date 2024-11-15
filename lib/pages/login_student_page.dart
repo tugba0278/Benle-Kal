@@ -1,7 +1,12 @@
+// ignore_for_file: avoid_print
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:psychology_app/auth-services/sign_in_service.dart';
 import 'package:psychology_app/classes/container1.dart';
 import 'package:psychology_app/classes/container2.dart';
 import 'package:psychology_app/classes/login_logo_container.dart';
+import 'package:psychology_app/error-dialogs/error_dialog.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
@@ -18,12 +23,39 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
       TextEditingController(); //e-mailin girileceği text metnin kontrolünü sağlar.
   final TextEditingController _passwordController =
       TextEditingController(); //şifrenin girileceği text metnin kontrolünü sağlar.
+  SignInService signInService = SignInService();
 
   @override
   void dispose() {
     _emailController.dispose(); // email objesi bellekten kaldırılır
     _passwordController.dispose(); //şifre objesi bellekten kaldırılır
     super.dispose(); //widget'ın tamamı bellekten kaldırılır
+  }
+
+  void _login() async {
+    if (_formKey.currentState!.validate()) {
+      String email = _emailController.text;
+      String password = _passwordController.text;
+
+      User? user =
+          await signInService.signInWithEmailAndPassword(email, password);
+
+      if (user != null) {
+        print('Giriş başarılı : ${user.email}');
+        // ignore: use_build_context_synchronously
+        Navigator.pushNamed(context, loginOptionsPageRoute);
+      } else {
+        print('Giriş Başarısız.');
+        // Klavyeyi kapat
+        FocusScope.of(context).unfocus();
+        Utils.showErrorDialog(context, 'Email veya şifrenizi kontrol ediniz');
+        FocusScope.of(context).unfocus();
+        setState(() {
+          _emailController.clear();
+          _passwordController.clear();
+        });
+      }
+    }
   }
 
   @override
@@ -100,7 +132,8 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                             width: 265,
                             height: 50,
                             child: TextFormField(
-                              controller: _emailController,
+                              controller:
+                                  _emailController, //Kullanıcının metin alanına girdiği veriyi almak için kullanılır.
                               keyboardType: TextInputType.emailAddress,
                               decoration: const InputDecoration(
                                   labelText: '   Email',
@@ -108,6 +141,14 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                                   enabledBorder: formBorderStyle,
                                   focusedBorder: formFocusBorderStyle),
                               textAlign: TextAlign.center,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Email adresinizi giriniz';
+                                } else if (!value.contains('@')) {
+                                  return 'Geçerli bir e-posta adresi girin';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -117,7 +158,8 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                             width: 265,
                             height: 50,
                             child: TextFormField(
-                              controller: _passwordController,
+                              controller:
+                                  _passwordController, //Kullanıcının metin alanına girdiği veriyi almak için kullanılır.
                               keyboardType: TextInputType.text,
                               decoration: const InputDecoration(
                                   labelText: '   Şifre',
@@ -127,6 +169,12 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                               textAlign: TextAlign.center,
                               obscureText: true,
                               obscuringCharacter: '*',
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Şifrenizi giriniz';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           Padding(
@@ -145,7 +193,7 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
                             width: 200,
                             height: 40,
                             child: OutlinedButton(
-                                onPressed: () {},
+                                onPressed: _login,
                                 style: logRegButtonStyle,
                                 child: const Text(
                                   'Oturum Aç',

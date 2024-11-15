@@ -72,6 +72,19 @@ var textButtonStyle2 = TextButton.styleFrom(
     ),
     foregroundColor: const Color.fromRGBO(201, 104, 104, 52));
 
+var errorTextButtonStyle = OutlinedButton.styleFrom(
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(10),
+  ),
+  backgroundColor: const Color(0xFF063B6C),
+);
+
+const errorTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 14,
+    fontFamily: "Inter",
+    fontWeight: FontWeight.w400);
+
 const formTextStyle = TextStyle(
     color: Color(0xFFC96868),
     fontSize: 16,
