@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:psychology_app/auth-services/sign_up_service.dart';
 import 'package:psychology_app/design-classes/container1.dart';
 import 'package:psychology_app/design-classes/container2.dart';
 import 'package:psychology_app/design-classes/login_logo_container.dart';
+import 'package:psychology_app/functions/register_function.dart';
 import 'package:psychology_app/styles.dart';
 
 class RegisterStudentPage extends StatefulWidget {
@@ -19,6 +21,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
       TextEditingController(); //şifrenin girileceği text metnin kontrolünü sağlar.
   final TextEditingController _repPasswordController =
       TextEditingController(); //şifre tekrarı text metnin kontrolünü sağlar.
+  SignUpService signUpService = SignUpService();
 
   @override
   void dispose() {
@@ -26,6 +29,15 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
     _passwordController.dispose(); //şifre objesi bellekten kaldırılır
     _repPasswordController.dispose(); //şifre tekrar objesi bellekten kaldırılır
     super.dispose(); //widget'ın tamamı bellekten kaldırılır
+  }
+
+  void _signUp() {
+    RegisterHelper.register(
+        context: context,
+        emailController: _emailController,
+        passwordController: _passwordController,
+        formKey: _formKey,
+        signUpService: signUpService);
   }
 
   @override
@@ -107,6 +119,14 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                                   enabledBorder: formBorderStyle,
                                   focusedBorder: formFocusBorderStyle),
                               textAlign: TextAlign.center,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Email adresinizi giriniz';
+                                } else if (!value.contains('@')) {
+                                  return 'Geçerli bir e-posta giriniz.';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -124,6 +144,14 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                                   enabledBorder: formBorderStyle,
                                   focusedBorder: formFocusBorderStyle),
                               textAlign: TextAlign.center,
+                              obscureText: true,
+                              obscuringCharacter: '*',
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Şifrenizi giriniz';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -143,6 +171,12 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                               textAlign: TextAlign.center,
                               obscureText: true,
                               obscuringCharacter: '*',
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Şifre giriniz';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -152,7 +186,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
                             width: 200,
                             height: 40,
                             child: OutlinedButton(
-                                onPressed: () {},
+                                onPressed: _signUp,
                                 style: logRegButtonStyle,
                                 child: const Text(
                                   'Kaydol',
