@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:psychology_app/classes/container1.dart';
-import 'package:psychology_app/classes/container2.dart';
-import 'package:psychology_app/classes/login_logo_container.dart';
+import 'package:psychology_app/design-classes/container1.dart';
+import 'package:psychology_app/design-classes/container2.dart';
+import 'package:psychology_app/design-classes/login_logo_container.dart';
 import 'package:psychology_app/styles.dart';
 
 class RegisterPsychologistPage extends StatefulWidget {

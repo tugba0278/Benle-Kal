@@ -1,12 +1,11 @@
 // ignore_for_file: avoid_print
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:psychology_app/auth-services/sign_in_service.dart';
-import 'package:psychology_app/classes/container1.dart';
-import 'package:psychology_app/classes/container2.dart';
-import 'package:psychology_app/classes/login_logo_container.dart';
-import 'package:psychology_app/error-dialogs/error_dialog.dart';
+import 'package:psychology_app/design-classes/container1.dart';
+import 'package:psychology_app/design-classes/container2.dart';
+import 'package:psychology_app/design-classes/login_logo_container.dart';
+import 'package:psychology_app/functions/login_function.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
@@ -32,30 +31,13 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
     super.dispose(); //widget'ın tamamı bellekten kaldırılır
   }
 
-  void _login() async {
-    if (_formKey.currentState!.validate()) {
-      String email = _emailController.text;
-      String password = _passwordController.text;
-
-      User? user =
-          await signInService.signInWithEmailAndPassword(email, password);
-
-      if (user != null) {
-        print('Giriş başarılı : ${user.email}');
-        // ignore: use_build_context_synchronously
-        Navigator.pushNamed(context, loginOptionsPageRoute);
-      } else {
-        print('Giriş Başarısız.');
-        // Klavyeyi kapat
-        FocusScope.of(context).unfocus();
-        Utils.showErrorDialog(context, 'Email veya şifrenizi kontrol ediniz');
-        FocusScope.of(context).unfocus();
-        setState(() {
-          _emailController.clear();
-          _passwordController.clear();
-        });
-      }
-    }
+  void _login() {
+    LoginHelper.login(
+        context: context,
+        emailController: _emailController,
+        passwordController: _passwordController,
+        formKey: _formKey,
+        signInService: signInService);
   }
 
   @override

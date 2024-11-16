@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:psychology_app/classes/logo_image.dart';
+import 'package:psychology_app/design-classes/logo_image.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/string-values/splash_string.dart';
 import 'package:psychology_app/styles.dart';

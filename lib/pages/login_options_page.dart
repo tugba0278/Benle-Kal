@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:psychology_app/classes/logo_column.dart';
-import 'package:psychology_app/classes/splash_container1.dart';
-import 'package:psychology_app/classes/splash_container2.dart';
+import 'package:psychology_app/design-classes/logo_column.dart';
+import 'package:psychology_app/design-classes/splash_container1.dart';
+import 'package:psychology_app/design-classes/splash_container2.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:psychology_app/classes/container1.dart';
-import 'package:psychology_app/classes/container2.dart';
-import 'package:psychology_app/classes/login_logo_container.dart';
+import 'package:psychology_app/auth-services/sign_in_service.dart';
+import 'package:psychology_app/design-classes/container1.dart';
+import 'package:psychology_app/design-classes/container2.dart';
+import 'package:psychology_app/design-classes/login_logo_container.dart';
+import 'package:psychology_app/functions/login_function.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
@@ -18,12 +20,22 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
       TextEditingController(); //email input kontrolü yapar
   final TextEditingController _passwordController =
       TextEditingController(); //şifre input kontrolü yapar
+  SignInService signInService = SignInService();
 
   @override
   void dispose() {
     _emailController.dispose(); //email objesi bellekten kaldırılır.
     _passwordController.dispose(); //şifre objesi bellekten kaldırılır.
     super.dispose(); //widget'ın tamamı bellekten kaldırılır.
+  }
+
+  void _login() {
+    LoginHelper.login(
+        context: context,
+        emailController: _emailController,
+        passwordController: _passwordController,
+        formKey: _formKey,
+        signInService: signInService);
   }
 
   @override
@@ -123,6 +135,14 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                                   enabledBorder: formBorderStyle,
                                   focusedBorder: formFocusBorderStyle),
                               textAlign: TextAlign.center,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Email adresinizi giriniz';
+                                } else if (!value.contains('@')) {
+                                  return 'Geçerli bir e-posta adresi giriniz';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -143,6 +163,12 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                               textAlign: TextAlign.center,
                               obscureText: true,
                               obscuringCharacter: '*',
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Şifrenizi giriniz.';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           Padding(
@@ -159,7 +185,7 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
                             width: 200,
                             height: 40,
                             child: OutlinedButton(
-                              onPressed: () {},
+                              onPressed: _login,
                               style: logRegButtonStyle,
                               child: const Text(
                                 'Oturum Aç',
