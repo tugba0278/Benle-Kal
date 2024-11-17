@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:psychology_app/auth-services/sign_up_service.dart';
 import 'package:psychology_app/design-classes/container1.dart';
 import 'package:psychology_app/design-classes/container2.dart';
 import 'package:psychology_app/design-classes/login_logo_container.dart';
+import 'package:psychology_app/functions/register_function.dart';
+import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
 class RegisterPsychologistPage extends StatefulWidget {
@@ -20,6 +23,7 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
       TextEditingController(); //şifre input texti kontrol eder.
   final TextEditingController _repPasswordController =
       TextEditingController(); //şifre tekrarı input texti kontrol eder.
+  SignUpService signUpService = SignUpService();
 
   @override
   void dispose() {
@@ -27,6 +31,17 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
     _passwordController.dispose(); //şifre objesi bellekten kaldırılır
     _repPasswordController.dispose(); //şifre tekrar objesi bellekten kaldırılır
     super.dispose(); //widget'ın tamamı bellekten kaldırılır
+  }
+
+  void _signUp() {
+    RegisterHelper.register(
+        context: context,
+        emailController: _emailController,
+        passwordController: _passwordController,
+        repPasswordController: _repPasswordController,
+        formKey: _formKey,
+        signUpService: signUpService,
+        routePath: psychologHomePageRoute);
   }
 
   @override
@@ -109,6 +124,14 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                                   enabledBorder: formBorderStyle,
                                   focusedBorder: formFocusBorderStyle),
                               textAlign: TextAlign.center,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Email adresinizi giriniz.';
+                                } else if (!value.contains('@')) {
+                                  return 'Geçerli bir e-posta giriniz.';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -128,6 +151,12 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                               textAlign: TextAlign.center,
                               obscureText: true,
                               obscuringCharacter: '*',
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Şifrenizi giriniz';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -147,6 +176,12 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                               textAlign: TextAlign.center,
                               obscureText: true,
                               obscuringCharacter: '*',
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Şifrenizi giriniz';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(
@@ -156,7 +191,7 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
                             width: 200,
                             height: 40,
                             child: OutlinedButton(
-                              onPressed: () {},
+                              onPressed: _signUp,
                               style: logRegButtonStyle,
                               child: const Text(
                                 'Kaydol',
