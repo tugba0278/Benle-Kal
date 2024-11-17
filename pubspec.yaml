@@ -85,7 +85,6 @@ flutter:
         - asset: lib/assets/fonts/Inter_18pt-Regular.ttf
           weight: 400
         - asset: lib/assets/fonts/Inter_18pt-Medium.ttf
-          style: italic
           weight: 500
     - family: Island Moments
       fonts:
