@@ -35,7 +35,8 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
         emailController: _emailController,
         passwordController: _passwordController,
         formKey: _formKey,
-        signInService: signInService);
+        signInService: signInService,
+        routePath: psychologHomePageRoute);
   }
 
   @override

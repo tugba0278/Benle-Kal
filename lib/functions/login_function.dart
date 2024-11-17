@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:psychology_app/auth-services/sign_in_service.dart';
 import 'package:psychology_app/error-dialogs/error_dialog.dart';
-import 'package:psychology_app/routes.dart';
 
 class LoginHelper {
   static Future<void> login(
@@ -12,7 +11,8 @@ class LoginHelper {
       required TextEditingController emailController,
       required TextEditingController passwordController,
       required GlobalKey<FormState> formKey,
-      required SignInService signInService}) async {
+      required SignInService signInService,
+      required String routePath}) async {
     if (formKey.currentState!.validate()) {
       String email = emailController.text;
       String password = passwordController.text;
@@ -22,7 +22,7 @@ class LoginHelper {
 
       if (user != null) {
         print('Giriş başarılı : ${user.email}');
-        Navigator.pushNamed(context, loginOptionsPageRoute);
+        Navigator.pushNamed(context, routePath);
       } else {
         print('Giriş Başarısız.');
         FocusScope.of(context).unfocus();

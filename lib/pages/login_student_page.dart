@@ -37,7 +37,8 @@ class _LoginStudentPageState extends State<LoginStudentPage> {
         emailController: _emailController,
         passwordController: _passwordController,
         formKey: _formKey,
-        signInService: signInService);
+        signInService: signInService,
+        routePath: studentHomePageRoute);
   }
 
   @override
