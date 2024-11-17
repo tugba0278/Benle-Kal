@@ -4,6 +4,7 @@ import 'package:psychology_app/design-classes/container1.dart';
 import 'package:psychology_app/design-classes/container2.dart';
 import 'package:psychology_app/design-classes/login_logo_container.dart';
 import 'package:psychology_app/functions/register_function.dart';
+import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
 class RegisterStudentPage extends StatefulWidget {
@@ -36,8 +37,10 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
         context: context,
         emailController: _emailController,
         passwordController: _passwordController,
+        repPasswordController: _repPasswordController,
         formKey: _formKey,
-        signUpService: signUpService);
+        signUpService: signUpService,
+        routePath: studentHomePageRoute);
   }
 
   @override

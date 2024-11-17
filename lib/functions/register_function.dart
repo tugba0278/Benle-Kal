@@ -12,19 +12,23 @@ class RegisterHelper {
       {required BuildContext context,
       required TextEditingController emailController,
       required TextEditingController passwordController,
+      required TextEditingController repPasswordController,
       required GlobalKey<FormState> formKey,
-      required SignUpService signUpService}) async {
-    if (formKey.currentState!.validate()) {
+      required SignUpService signUpService,
+      required String routePath}) async {
+    if (formKey.currentState!.validate() &&
+        passwordController.text == repPasswordController.text) {
       String email = emailController.text;
       String password = passwordController.text;
+      //String repPassword = repPasswordController.text;
 
       try {
         User? user = await signUpService.signUpWithEmailAndPassword(
             context, email, password);
         if (user != null) {
           print('User is succesfully created');
-          //  Navigator.pushNamedAndRemoveUntil(
-          //               context, loginPageRoute, (route) => false);
+          Navigator.pushNamedAndRemoveUntil(
+              context, routePath, (route) => false);
           ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('Kaydınız oluşturuldu.')));
         }
@@ -39,10 +43,15 @@ class RegisterHelper {
           }
         }
       }
-      emailController.clear();
-      passwordController.clear();
+    } else if (formKey.currentState!.validate() &&
+        repPasswordController.text != passwordController.text) {
+      Utils.showErrorDialog(context, 'Şifreler uyuşmuyor.');
+      return;
     } else {
       print('Error: $e');
     }
+    emailController.clear();
+    passwordController.clear();
+    repPasswordController.clear();
   }
 }
