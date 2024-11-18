@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const fontFamily = "Inter";
 const fontWeightRegular = FontWeight.w400;
+const fontWeightMedium = FontWeight.w500;
 const fontWeightBold = FontWeight.w800;
 
 const splashTextColor = Color(0xFF063B6C);
@@ -128,6 +129,12 @@ const titleTextStyle = TextStyle(
     fontSize: 20,
     fontFamily: fontFamily,
     fontWeight: fontWeightBold);
+
+const drawerTextStyle = TextStyle(
+    color: blackColor,
+    fontSize: 19,
+    fontFamily: fontFamily,
+    fontWeight: fontWeightMedium);
 
 final backVectorStyle = Image.asset(
   'lib/assets/vector/back.png',

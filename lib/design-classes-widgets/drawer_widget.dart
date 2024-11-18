@@ -8,6 +8,7 @@ class DrawerWidget extends StatelessWidget {
 
   final LogoImage logoImage = LogoImage(width: 30, height: 30);
   final DrawerLineContainer drawerLine = DrawerLineContainer();
+  final contentAligment = const EdgeInsets.only(left: 40);
 
   @override
   Widget build(BuildContext context) {
@@ -30,58 +31,93 @@ class DrawerWidget extends StatelessWidget {
                   height: 200,
                   child: logoImage.buildImage(context),
                 ),
+                const SizedBox(
+                  height: 30,
+                ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('Terapiler'),
+                  title: const Text(
+                    'Terapiler',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('Chat Bot'),
+                  title: const Text(
+                    'Chat Bot',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('Grup Terapisi'),
+                  title: const Text(
+                    'Grup Terapisi',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('Psikoloğum'),
+                  title: const Text(
+                    'Psikoloğum',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('Hakkımızda'),
+                  title: const Text(
+                    'Hakkımızda',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('Profilim'),
+                  title: const Text(
+                    'Profilim',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('İletişim'),
+                  title: const Text(
+                    'İletişim',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
                 ListTile(
-                  title: const Text('Çıkış Yap'),
+                  title: const Text(
+                    'Çıkış Yap',
+                    style: drawerTextStyle,
+                  ),
+                  contentPadding: contentAligment,
                   onTap: () {
                     Navigator.pop(context);
                   },
