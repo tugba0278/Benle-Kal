@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:psychology_app/design-classes/home_page_grid.dart';
-import 'package:psychology_app/design-classes/logo_image.dart';
-import 'package:psychology_app/design-classes/stroke_text_widget.dart';
+import 'package:psychology_app/design-classes-widgets/home_page_grid.dart';
+import 'package:psychology_app/design-classes-widgets/logo_image.dart';
+import 'package:psychology_app/design-classes-widgets/stroke_text_widget.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
@@ -32,17 +32,30 @@ class _StudentHomePage extends State<StudentHomePage> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.white,
-        child: ListView(
+        child: Row(
           children: [
-            SizedBox(
-              height: 200,
-              child: logoImage.buildImage(context),
+            Container(
+              width: 12,
+              height: MediaQuery.of(context).size.height,
+              color: Color(0xFF063B6C),
             ),
-            ListTile(
-              title: const Text('Kullanıcı Profili'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+            Expanded(
+              //Sadece flex düzeni içinde çalışır (örn: row,column,flex)
+              child: ListView(
+                padding: EdgeInsets.only(top: 50),
+                children: [
+                  SizedBox(
+                    height: 200,
+                    child: logoImage.buildImage(context),
+                  ),
+                  ListTile(
+                    title: const Text('Kullanıcı Profili'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),

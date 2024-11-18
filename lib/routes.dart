@@ -1,4 +1,4 @@
-import 'package:psychology_app/design-classes/home_page_grid.dart';
+import 'package:psychology_app/design-classes-widgets/home_page_grid.dart';
 
 const splashPageRoute = "/splash";
 const loginOptionsPageRoute = "/login-options";

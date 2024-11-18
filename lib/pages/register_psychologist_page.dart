@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:psychology_app/auth-services/sign_up_service.dart';
-import 'package:psychology_app/design-classes/container1.dart';
-import 'package:psychology_app/design-classes/container2.dart';
-import 'package:psychology_app/design-classes/login_logo_container.dart';
+import 'package:psychology_app/design-classes-widgets/container1.dart';
+import 'package:psychology_app/design-classes-widgets/container2.dart';
+import 'package:psychology_app/design-classes-widgets/login_logo_container.dart';
 import 'package:psychology_app/functions/register_function.dart';
 import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
