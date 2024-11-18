@@ -1,9 +1,10 @@
 import 'package:flutter/widgets.dart';
+import 'package:psychology_app/styles.dart';
 
 class Container1 {
   final Color color;
 
-  Container1({this.color = const Color(0xFF0D5E93)});
+  Container1({this.color = startBgColor});
 
   Widget buildContainer(BuildContext context) {
     final containerHeight = MediaQuery.of(context).size.height * 0.25;

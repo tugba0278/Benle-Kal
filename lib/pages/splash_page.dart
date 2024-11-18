@@ -24,7 +24,7 @@ class _SplashPageState extends State<SplashPage> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: whiteColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

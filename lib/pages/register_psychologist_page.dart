@@ -52,7 +52,7 @@ class _RegisterPsychologistPageState extends State<RegisterPsychologistPage> {
         imagePath: 'lib/assets/images/psycholog-logo-ellipse.png');
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: whiteColor,
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();

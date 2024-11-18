@@ -4,7 +4,7 @@ import 'package:psychology_app/styles.dart';
 class SplashContainer2 {
   final Color color;
 
-  SplashContainer2({this.color = Colors.white});
+  SplashContainer2({this.color = whiteColor});
 
   Widget buildContainer(BuildContext context) {
     final containerheight = MediaQuery.of(context).size.height * 0.6;

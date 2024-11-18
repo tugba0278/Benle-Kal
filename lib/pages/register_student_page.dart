@@ -51,7 +51,7 @@ class _RegisterStudentPageState extends State<RegisterStudentPage> {
         LogoContainer(imagePath: 'lib/assets/images/student-logo.png');
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: whiteColor,
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();

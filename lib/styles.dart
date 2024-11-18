@@ -4,8 +4,21 @@ const fontFamily = "Inter";
 const fontWeightRegular = FontWeight.w400;
 const fontWeightBold = FontWeight.w800;
 
+const splashTextColor = Color(0xFF063B6C);
+const startBgColor = Color(0xFF0D5E93);
+const optionsButtonBgColor = Color(0xFFF3D1DB);
+const optionsButtonTapColor = Color(0xFFE1ACAC);
+const borderColor = Color(0XFFFF9B9B);
+const focusBorderColor = Color.fromARGB(255, 255, 183, 183);
+const formTextColor = Color(0xFFC96868);
+const blackColor = Color(0xFF000000);
+const whiteColor = Color(0xFFFFFFFF);
+const textButtonColor = Color.fromRGBO(201, 104, 104, 52);
+const titleColor = Color(0xFF798998);
+const bgColor = Color(0xFF063B6C);
+
 const splashTextStyle = TextStyle(
-  color: Color(0xFF063B6C),
+  color: splashTextColor,
   fontSize: 18,
   fontWeight: FontWeight.w500,
   fontFamily: fontFamily,
@@ -19,16 +32,16 @@ final curvedArrowStyle = Image.asset(
 
 var optionsButtonStyle = OutlinedButton.styleFrom(
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-  overlayColor: const Color(0xFFE1ACAC),
-  backgroundColor: const Color(0xFFF3D1DB),
+  overlayColor: optionsButtonTapColor,
+  backgroundColor: optionsButtonBgColor,
   side: const BorderSide(
-    color: Colors.black, // Kenarlık rengini siyah yap
+    color: blackColor, // Kenarlık rengini siyah yap
     width: 1.3, // Kenarlık kalınlığı (isteğe bağlı)
   ),
 );
 
 const optionsTextStyle = TextStyle(
-    color: Color(0xFF000000),
+    color: blackColor,
     fontSize: 18,
     fontFamily: fontFamily,
     fontWeight: fontWeightRegular);
@@ -49,23 +62,23 @@ var logRegButtonStyle = OutlinedButton.styleFrom(
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(30),
   ),
-  backgroundColor: Colors.black,
+  backgroundColor: blackColor,
 );
 
 const logRegTextStyle = TextStyle(
-    color: Colors.white,
+    color: whiteColor,
     fontSize: 16,
     fontFamily: fontFamily,
     fontWeight: fontWeightRegular);
 
 var textButtonStyle = TextButton.styleFrom(
     textStyle: const TextStyle(
-      color: Colors.black,
+      color: blackColor,
       fontSize: 15,
       fontFamily: fontFamily,
       fontWeight: fontWeightRegular,
     ),
-    foregroundColor: Colors.black);
+    foregroundColor: blackColor);
 
 var textButtonStyle2 = TextButton.styleFrom(
     textStyle: const TextStyle(
@@ -74,47 +87,44 @@ var textButtonStyle2 = TextButton.styleFrom(
       fontFamily: fontFamily,
       fontWeight: fontWeightRegular,
     ),
-    foregroundColor: const Color.fromRGBO(201, 104, 104, 52));
+    foregroundColor: textButtonColor);
 
 var errorTextButtonStyle = OutlinedButton.styleFrom(
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(10),
   ),
-  backgroundColor: const Color(0xFF063B6C),
+  backgroundColor: bgColor,
 );
 
 const errorTextStyle = TextStyle(
-    color: Colors.white,
+    color: whiteColor,
     fontSize: 14,
     fontFamily: fontFamily,
     fontWeight: fontWeightRegular);
 
 const formTextStyle = TextStyle(
-    color: Color(0xFFC96868),
+    color: formTextColor,
     fontSize: 16,
     fontFamily: fontFamily,
     fontWeight: fontWeightRegular);
 
 const formBorderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(30)),
-    borderSide: BorderSide(color: Color(0XFFFF9B9B), width: 1));
+    borderSide: BorderSide(color: borderColor, width: 1));
 
 const formFocusBorderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(30)),
-    borderSide:
-        BorderSide(color: Color.fromARGB(255, 255, 183, 183), width: 1));
+    borderSide: BorderSide(color: focusBorderColor, width: 1));
 
 const gridTextStyle = TextStyle(
-    color: Colors.white,
+    color: whiteColor,
     fontSize: 16,
     fontFamily: fontFamily,
     fontWeight: fontWeightRegular);
 
 const titleTextStyle = TextStyle(
-    shadows: [
-      Shadow(offset: Offset(0, 0), color: Color(0xFF798998), blurRadius: 9)
-    ],
-    color: Colors.white,
+    shadows: [Shadow(offset: Offset(0, 0), color: titleColor, blurRadius: 9)],
+    color: whiteColor,
     fontSize: 20,
     fontFamily: fontFamily,
     fontWeight: fontWeightBold);

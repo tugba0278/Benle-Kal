@@ -4,7 +4,7 @@ import 'package:psychology_app/styles.dart';
 class Container2 {
   final Color color;
 
-  Container2({this.color = Colors.white});
+  Container2({this.color = whiteColor});
 
   Widget buildContainer(BuildContext context) {
     final containerHeight = MediaQuery.of(context).size.height * 0.75;

@@ -7,10 +7,10 @@ class Utils {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: const Color(0xFF063B6C),
+        backgroundColor: bgColor,
         title: const Text(
           "Hata",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: whiteColor),
         ),
         content: Text(
           message,

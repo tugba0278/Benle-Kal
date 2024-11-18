@@ -46,7 +46,7 @@ class _LoginPsychologistPageState extends State<LoginPsychologistPage> {
     LogoContainer loginLogoContainer = LogoContainer(
         imagePath: 'lib/assets/images/psycholog-logo-ellipse.png');
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: whiteColor,
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();

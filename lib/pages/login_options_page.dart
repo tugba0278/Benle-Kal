@@ -22,7 +22,7 @@ class _LoginOptionsPageState extends State<LoginOptionsPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: whiteColor,
         body: Stack(children: [
           Column(
             children: [

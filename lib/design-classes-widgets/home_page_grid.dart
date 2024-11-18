@@ -10,7 +10,7 @@ class HomePageGrid extends StatelessWidget {
 
   const HomePageGrid({
     super.key,
-    this.color = const Color(0xFF063B6C),
+    this.color = bgColor,
     this.height = 130,
     this.width = 130,
     required this.imagePath,

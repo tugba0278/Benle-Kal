@@ -11,8 +11,8 @@ class StrokeText extends StatelessWidget {
       {super.key,
       required this.text,
       this.fontSize = 20,
-      this.strokeColor = const Color(0xFF798998),
-      this.fillColor = Colors.white});
+      this.strokeColor = titleColor,
+      this.fillColor = whiteColor});
 
   @override
   Widget build(BuildContext context) {
