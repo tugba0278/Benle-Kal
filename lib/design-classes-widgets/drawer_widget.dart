@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:psychology_app/design-classes-widgets/drawer_line_container.dart';
 import 'package:psychology_app/design-classes-widgets/logo_image.dart';
+import 'package:psychology_app/error-dialogs/student_logout_dialog.dart';
+import 'package:psychology_app/routes.dart';
 import 'package:psychology_app/styles.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -86,7 +88,7 @@ class DrawerWidget extends StatelessWidget {
                   ),
                   contentPadding: contentAligment,
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, aboutRoutePage);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),
@@ -119,7 +121,7 @@ class DrawerWidget extends StatelessWidget {
                   ),
                   contentPadding: contentAligment,
                   onTap: () {
-                    Navigator.pop(context);
+                    LogoutDialog.showLogOutDialog(context);
                   },
                 ),
               ],

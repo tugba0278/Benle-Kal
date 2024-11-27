@@ -138,8 +138,8 @@ const drawerTextStyle = TextStyle(
 
 final backVectorStyle = Image.asset(
   'lib/assets/vector/back.png',
-  height: 35,
-  width: 35,
+  height: 30,
+  width: 30,
 );
 
 final psychologLogoStyle = Image.asset(
@@ -152,4 +152,22 @@ final homeMenuVectorStyle = Image.asset(
   'lib/assets/vector/menu-symbol.png',
   height: 40,
   width: 40,
+);
+
+final menuVectorStyle = Image.asset(
+  'lib/assets/images/menu-vector.png',
+  width: 40,
+  height: 40,
+);
+
+final homeIcon = Image.asset(
+  'lib/assets/images/home-icon.png',
+  height: 25,
+  width: 25,
+);
+
+final logoutIcon = Image.asset(
+  'lib/assets/images/logout.png',
+  width: 25,
+  height: 25,
 );
