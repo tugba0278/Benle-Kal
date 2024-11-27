@@ -9,6 +9,7 @@ const registerPsychologistPageRoute = "/register-psychologist";
 const studentHomePageRoute = "/student-home-page";
 const psychologHomePageRoute = "/psycholog-home-page";
 const aboutRoutePage = "/about";
+const contactRoutePage = "/contact";
 
 const gridItemsList = [
   HomePageGrid(

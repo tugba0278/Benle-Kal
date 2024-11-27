@@ -110,7 +110,7 @@ class DrawerWidget extends StatelessWidget {
                   ),
                   contentPadding: contentAligment,
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, contactRoutePage);
                   },
                 ),
                 drawerLine.buildDrawerLine(context),

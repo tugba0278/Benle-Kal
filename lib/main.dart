@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:psychology_app/firebase_options.dart';
-import 'package:psychology_app/pages/about.dart';
+import 'package:psychology_app/pages/about_page.dart';
+import 'package:psychology_app/pages/contact_page.dart';
 import 'package:psychology_app/pages/login_options_page.dart';
 import 'package:psychology_app/pages/login_psychologist_page.dart';
 import 'package:psychology_app/pages/login_student_page.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         studentHomePageRoute: (context) => const StudentHomePage(),
         psychologHomePageRoute: (context) => const PsychologHomePage(),
         aboutRoutePage: (context) => const About(),
+        contactRoutePage: (context) => const ContactPage(),
       },
     );
   }
