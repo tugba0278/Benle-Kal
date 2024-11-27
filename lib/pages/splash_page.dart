@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:psychology_app/design-classes-widgets/logo_image.dart';
 import 'package:psychology_app/routes.dart';
-import 'package:psychology_app/string-values/splash_string.dart';
+import 'package:psychology_app/string-values/strings.dart';
 import 'package:psychology_app/styles.dart';
 
 class SplashPage extends StatefulWidget {

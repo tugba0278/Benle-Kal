@@ -136,6 +136,12 @@ const drawerTextStyle = TextStyle(
     fontFamily: fontFamily,
     fontWeight: fontWeightMedium);
 
+const aboutTextStyle = TextStyle(
+    color: blackColor,
+    fontSize: 18,
+    fontFamily: fontFamily,
+    fontWeight: fontWeightRegular);
+
 final backVectorStyle = Image.asset(
   'lib/assets/vector/back.png',
   height: 30,
@@ -170,4 +176,10 @@ final logoutIcon = Image.asset(
   'lib/assets/images/logout.png',
   width: 25,
   height: 25,
+);
+
+final aboutPageImage = Image.asset(
+  'lib/assets/images/about-image.png',
+  width: 220,
+  height: 220,
 );

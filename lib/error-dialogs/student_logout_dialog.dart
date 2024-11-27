@@ -31,7 +31,7 @@ class LogoutDialog {
             ),
           ),
           const SizedBox(
-            width: 300,
+            width: 100,
           ),
           TextButton(
             onPressed: () async {
