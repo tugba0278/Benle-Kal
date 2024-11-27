@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:psychology_app/design-classes-widgets/student_bottom_bar_widget.dart';
 import 'package:psychology_app/design-classes-widgets/endDrawer_widget.dart';
 import 'package:psychology_app/design-classes-widgets/stroke_text_widget.dart';
 import 'package:psychology_app/string-values/strings.dart';
@@ -60,6 +61,7 @@ class _About extends State<About> {
           ),
         ),
       ),
+      bottomNavigationBar: const StudentBottomBarWidget(),
     );
   }
 }

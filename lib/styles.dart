@@ -161,13 +161,19 @@ final homeMenuVectorStyle = Image.asset(
 );
 
 final menuVectorStyle = Image.asset(
-  'lib/assets/images/menu-vector.png',
+  'lib/assets/vector/menu-vector.png',
   width: 40,
   height: 40,
 );
 
+final homeVectorStyle = Image.asset(
+  'lib/assets/vector/home-vector.png',
+  width: kBottomNavigationBarHeight,
+  height: kBottomNavigationBarHeight,
+);
+
 final homeIcon = Image.asset(
-  'lib/assets/images/home-icon.png',
+  'lib/assets/vector/home-icon.png',
   height: 25,
   width: 25,
 );
