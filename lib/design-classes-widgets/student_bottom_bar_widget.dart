@@ -16,8 +16,8 @@ class StudentBottomBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: bgColor,
-      height: 65,
+      color: color,
+      height: height,
       shape: const CircularNotchedRectangle(),
       clipBehavior: Clip.antiAlias,
       child: IconButton(
